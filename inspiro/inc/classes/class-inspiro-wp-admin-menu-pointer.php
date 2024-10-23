@@ -84,7 +84,7 @@ if ( ! class_exists( 'Inspiro_WP_Admin_Menu_Pointer' ) ) {
 		 * Create pointer text and markup.
 		 */
 		public function create_pointer_text( $header_text, $content_text ) {
-			return '<h3>' . __( $header_text, 'inspiro' ) . '</h3><p>' . __( $content_text, 'inspiro' ) . '</p>';
+			return '<h3>'. sprintf( __( '%s', 'inspiro' ), $header_text ) .'</h3><p>' . sprintf( __( '%s', 'inspiro' ), $content_text ) . '</p>';
 		}
 
 		/**
