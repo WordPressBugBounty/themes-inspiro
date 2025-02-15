@@ -266,6 +266,9 @@ class Inspiro_Theme_Upgrader {
 		$header_video_url     = get_header_video_url();
 		$header_textcolor     = get_header_textcolor();
 
+		// Check if header_textcolor is empty.
+		$header_textcolor = empty( $header_textcolor ) ? 'ffffff' : $header_textcolor;
+
 		if ( ! $header_image_data && $default_header_image ) {
 			$url           = inspiro_get_prop( $default_header_image, 'url' );
 			$thumbnail_url = inspiro_get_prop( $default_header_image, 'thumbnail_url' );
@@ -309,6 +312,43 @@ class Inspiro_Theme_Upgrader {
 			set_theme_mod( 'color-slider-description', maybe_hash_hex_color( $header_textcolor ) );
 		}
 
+		// Options to migrate
+		$options_transform = array(
+			'body-text-transform',
+			'heading1-text-transform',
+			'heading2-text-transform',
+			'heading3-text-transform',
+			'heading4-text-transform',
+			'heading5-text-transform',
+			'heading6-text-transform',
+			'slider-button-text-transform',
+			'slider-text-text-transform',
+			'mainmenu-text-transform',
+		);
+
+		// Options to migrate
+		$options_font_variant = array(
+			'slider-button-font-variant',
+			'slider-text-font-variant',
+		);
+
+		// Options to migrate
+		$options_color = array(
+			'color_scroll_to_content_arrow',
+			'color_general_h_tags',
+			'color_general_h1_tag',
+			'color_general_h2_tag',
+			'color_general_h3_tag',
+			'color_general_h4_tag',
+			'color_general_h5_tag',
+			'color_general_h6_tag',
+			'color_general_page_title',
+			'color_general_post_title',
+			'color_general_entry_excerpt_text',
+			'color_general_entry_content_text',
+			'color_general_link_content',
+			'color_general_link_hover_content',
+		);
 
 		// migrate options values
 		foreach ( $customizer_data as $name => $args ) {
@@ -326,6 +366,23 @@ class Inspiro_Theme_Upgrader {
 			}
 			if ( strpos( $name, 'font-weight' ) !== false && '400' === $theme_mod ) {
 				set_theme_mod( $name, 'normal' );
+			}
+
+			if ( in_array( $name, $options_transform ) && empty( $theme_mod ) ) {
+				set_theme_mod( $name, 'inherit' );
+			}
+
+			if ( in_array( $name, $options_font_variant ) && empty( $theme_mod ) ) {
+				set_theme_mod( $name, 'inherit' );
+			}
+
+			if ( in_array( $name, $options_color ) && $theme_mod !== 'blank' && empty( $theme_mod ) ) {
+				set_theme_mod( $name, 'inherit' );
+			}
+
+			// Slider Title Text Transform
+			if ( 'slider-title-text-transform' === $name && empty( $theme_mod ) ) {
+				set_theme_mod( $name, 'inherit' );
 			}
 
 			// --- Site Identity --- //
@@ -429,7 +486,9 @@ class Inspiro_Theme_Upgrader {
 			// - Hero section - //
 			// these values are transferred from hero to slider section
 			// set only Hero Title Text Color
-			if ( 'color_only_hero_title' === $name && 'color_only_hero_title' !== 'blank' ) {
+			if ( 'color_only_hero_title' === $name && $theme_mod !== 'blank' ) {
+				// Hero Title Text Color
+				$theme_mod = empty( $theme_mod ) ? 'ffffff' : $theme_mod;
 				set_theme_mod( 'color-slider-title', maybe_hash_hex_color( $theme_mod ) );
 			}
 			// Hero Button Text Color
@@ -486,10 +545,10 @@ class Inspiro_Theme_Upgrader {
 
 		}
 
-		if ( is_array( $header_image_data ) && empty( $header_video_url ) ) {
-			$this->slide_post_attr['post_thumbnail_path_url'] = $header_image_data['url'];
-		} elseif ( is_object( $header_image_data ) && empty( $header_video_url ) ) {
+		if( is_object( $header_image_data ) && isset( $header_image_data->attachment_id ) ) {
 			$this->slide_post_attr['post_thumbnail_id'] = $header_image_data->attachment_id;
+		} elseif ( is_array( $header_image_data ) && isset( $header_image_data['url'] ) ) {
+			$this->slide_post_attr['post_thumbnail_path_url'] = $header_image_data['url'];
 		}
 
 
@@ -511,6 +570,13 @@ class Inspiro_Theme_Upgrader {
 			} elseif ( 'video/x-vimeo' === $mime_type ) {
 				$this->slide_post_attr['wpzoom_home_slider_video_type']      = 'vimeo_pro';
 				$this->slide_post_attr['wpzoom_home_slider_video_vimeo_pro'] = $header_video_url;
+
+				// Get Vimeo video ID.
+				$oembed   = _wp_oembed_get_object();
+				$data     = $oembed->get_data( $header_video_url );
+				$video_id = ! empty( $data->video_id ) ? $data->video_id : false;
+				
+				$this->slide_post_attr['wpzoom_home_slider_video_vimeo_pro_video_id'] = $video_id;
 			} elseif ( 'video/mp4' === $mime_type ) {
 				$this->slide_post_attr['wpzoom_home_slider_video_type']       = 'self_hosted';
 				$this->slide_post_attr['wpzoom_home_slider_video_bg_url_mp4'] = $header_video_url;
