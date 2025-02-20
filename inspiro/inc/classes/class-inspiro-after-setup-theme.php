@@ -373,41 +373,48 @@ if ( ! class_exists( 'Inspiro_After_Setup_Theme' ) ) {
 		 * @return void
 		 */
 		public function register_required_plugins() {
+
+
 			/*
 			 * Array of plugin arrays. Required keys are name and slug.
 			 * If the source is NOT from the .org repo, then source is also required.
 			 */
 
-			$plugins = array(
+			 $plugins = array(
 
                 array(
-                    'name'     => 'One Click Demo Import',
-                    'slug'     => 'one-click-demo-import',
-                    'required' => false,
+                    'name'        => 'Inspiro Starter Sites',
+                    'slug'        => 'inspiro-starter-sites',
+					'description' => 'Import starter templates with Gutenberg Blocks, Elementor, and WooCommerce to create a new website in just a few clicks.',
+                    'required'    => false,
                 ),
 
                 array(
-                    'name'     => 'WPZOOM Portfolio',
-                    'slug'     => 'wpzoom-portfolio',
-                    'required' => false,
+                    'name'        => 'WPZOOM Portfolio',
+                    'slug'        => 'wpzoom-portfolio',
+					'description' => 'The ultimate solution for creatives, designers, photographers, and businesses looking to showcase their work in an elegant, professional, and fully customizable way.',
+                    'required'    => false,
                 ),
 
                 array(
-                    'name'     => 'WPZOOM Forms',
-                    'slug'     => 'wpzoom-forms',
-                    'required' => false,
+                    'name'        => 'WPZOOM Forms',
+                    'slug'        => 'wpzoom-forms',
+					'description' => 'WPZOOM Forms is a simple, user-friendly contact form plugin for WordPress that utilizes Gutenberg blocks for easy form building and customization.',
+                    'required'    => false,
                 ),
 
                 array(
-                    'name'     => 'Video Popup Block by WPZOOM',
-                    'slug'     => 'wpzoom-video-popup-block',
-                    'required' => false,
+                    'name'        => 'Video Popup Block by WPZOOM',
+                    'slug'        => 'wpzoom-video-popup-block',
+					'description' => 'Easily add a Gutenberg block to create customizable Play icon that open popups with YouTube, Vimeo, or MP4 videos.',
+                    'required'    => false,
                 ),
 
 				array(
-					'name'     => 'Instagram Widget by WPZOOM',
-					'slug'     => 'instagram-widget-by-wpzoom',
-					'required' => false,
+					'name'        => 'Instagram Widget by WPZOOM',
+					'slug'        => 'instagram-widget-by-wpzoom',
+					'description' => 'Formerly known as "Instagram Widget by WPZOOM". Simple and lightweight widget for WordPress to display your Instagram feed.',
+					'required'    => false,
 				),
 
 			);
@@ -424,7 +431,7 @@ if ( ! class_exists( 'Inspiro_After_Setup_Theme' ) ) {
 			$config = array(
 				'id'           => 'inspiro_wporg',         // Unique ID for hashing notices for multiple instances of TGMPA.
 				'default_path' => '',                      // Default absolute path to bundled plugins.
-				'menu'         => 'tgmpa-install-plugins', // Menu slug.
+				'menu'         => 'inspiro-plugins', // Menu slug.
                 'parent_slug'  => 'inspiro',
 				'has_notices'  => true,                    // Show admin notices or not.
 				'dismissable'  => true,                    // If false, a user cannot dismiss the nag message.
