@@ -242,9 +242,6 @@
     padding: 16px 24px;
     border: 1px solid #c3c3c3;
     border-radius: 4px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
     transition: 0.2s ease box-shadow;
 }
 .wpz-grid-wrap > .section:hover {
@@ -299,12 +296,9 @@
     margin: 0;
 }
 .section .pro-label {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: inline-block;
     background-color: #18b4aa;
     color: #ffffff;
-    width: 57px;
     height: 28px;
     padding: 4px 12px;
     border-radius: 25px;
@@ -422,7 +416,7 @@
     align-items: center;
     justify-content: center;
     font-weight: 600;
-    padding: 6px 22px;
+    padding: 6px 21px;
     transition: all 0.3s ease;
     margin-left: 10px;
     margin-bottom: 15px;
@@ -1244,7 +1238,7 @@
         grid-template-columns: repeat(auto-fill, minmax(268px, 1fr));
     }
 }
-@media screen and (max-width: 1500px) {
+@media screen and (max-width: 1512px) {
     .wpz-grid-wrap,
     .wpz-grid-wrap.three {
         grid-template-columns: repeat(2, 1fr);
