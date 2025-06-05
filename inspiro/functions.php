@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Define Constants
  */
-define( 'INSPIRO_THEME_VERSION', '2.0.5' );
+define( 'INSPIRO_THEME_VERSION', '2.0.7' );
 define( 'INSPIRO_THEME_DIR', trailingslashit( get_template_directory() ) );
 define( 'INSPIRO_THEME_URI', trailingslashit( esc_url( get_template_directory_uri() ) ) );
 define( 'INSPIRO_THEME_ASSETS_URI', INSPIRO_THEME_URI . 'dist' );
@@ -88,6 +88,10 @@ require INSPIRO_THEME_DIR . 'inc/template-functions.php';
  */
 require INSPIRO_THEME_DIR . 'inc/wc-custom-functions.php';
 
+/**
+ * Editor Fonts
+ */
+require INSPIRO_THEME_DIR . 'inc/editor-fonts.php';
 
 
 /**
@@ -146,4 +150,3 @@ require INSPIRO_THEME_DIR . 'inc/dynamic-css/hero-header-desc.php';
 require INSPIRO_THEME_DIR . 'inc/dynamic-css/hero-header-button.php';
 require INSPIRO_THEME_DIR . 'inc/dynamic-css/main-menu.php';
 require INSPIRO_THEME_DIR . 'inc/dynamic-css/mobile-menu.php';
-
