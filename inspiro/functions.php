@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Define Constants
  */
-define( 'INSPIRO_THEME_VERSION', '2.1.0' );
+define( 'INSPIRO_THEME_VERSION', '2.1.1' );
 define( 'INSPIRO_THEME_DIR', trailingslashit( get_template_directory() ) );
 define( 'INSPIRO_THEME_URI', trailingslashit( esc_url( get_template_directory_uri() ) ) );
 define( 'INSPIRO_THEME_ASSETS_URI', INSPIRO_THEME_URI . 'dist' );
@@ -131,6 +131,7 @@ if ( is_admin() ) {
 	if ( current_user_can( 'manage_options' ) ) {
 		require INSPIRO_THEME_DIR . 'inc/classes/class-inspiro-notices.php';
 		require INSPIRO_THEME_DIR . 'inc/classes/class-inspiro-notice-review.php';
+		require INSPIRO_THEME_DIR . 'inc/classes/class-inspiro-theme-deactivation.php';
 	}
 }
 
