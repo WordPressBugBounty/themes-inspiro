@@ -383,52 +383,103 @@ if ( ! class_exists( 'Inspiro_After_Setup_Theme' ) ) {
 			 $plugins = array(
 
                 array(
-                    'name'        => 'Inspiro Starter Sites',
-                    'slug'        => 'inspiro-starter-sites',
-					'description' => 'Import starter templates with Gutenberg Blocks, Elementor, and WooCommerce to create a new website in just a few clicks.',
-                    'required'    => false,
-                    'thumbnail' => 'https://ps.w.org/inspiro-starter-sites/assets/icon-256x256.png',
+                    'name'            => 'Inspiro Starter Sites',
+                    'slug'            => 'inspiro-starter-sites',
+                    'description'     => 'Import starter templates with Gutenberg Blocks, Elementor, and WooCommerce to create a new website in just a few clicks.',
+                    'required'        => false,
+                    'thumbnail'       => 'https://ps.w.org/inspiro-starter-sites/assets/icon-256x256.png',
+                    'external_url'    => 'https://wordpress.org/plugins/inspiro-starter-sites/',
+                    'category'        => 'Demo Import',
+                    'rating'          => 0,
+                    'active_installs' => 10000,
                 ),
 
                 array(
-                    'name'        => 'WPZOOM Portfolio',
-                    'slug'        => 'wpzoom-portfolio',
-					'description' => 'The ultimate solution for creatives, designers, photographers, and businesses looking to showcase their work in an elegant, professional, and fully customizable way.',
-                    'required'    => false,
-                    'thumbnail' => 'https://ps.w.org/wpzoom-portfolio/assets/icon-256x256.png?rev=3277086',
+                    'name'            => 'WPZOOM Portfolio',
+                    'slug'            => 'wpzoom-portfolio',
+                    'description'     => 'The ultimate solution for creatives, designers, photographers, and businesses looking to showcase their work in an elegant, professional, and fully customizable way.',
+                    'required'        => false,
+                    'thumbnail'       => 'https://ps.w.org/wpzoom-portfolio/assets/icon-256x256.png?rev=3277086',
+                    'external_url'    => 'https://wordpress.org/plugins/wpzoom-portfolio/',
+                    'category'        => 'Portfolio',
+                    'rating'          => 100,
+                    'active_installs' => 20000,
                 ),
 
                 array(
-                    'name'        => 'WPZOOM Forms',
-                    'slug'        => 'wpzoom-forms',
-					'description' => 'WPZOOM Forms is a simple, user-friendly contact form plugin for WordPress that utilizes Gutenberg blocks for easy form building and customization.',
-                    'required'    => false,
-                    'thumbnail' => 'https://ps.w.org/wpzoom-forms/assets/icon-256x256.png',
+                    'name'            => 'WPZOOM Forms',
+                    'slug'            => 'wpzoom-forms',
+                    'description'     => 'WPZOOM Forms is a simple, user-friendly contact form plugin for WordPress that utilizes Gutenberg blocks for easy form building and customization.',
+                    'required'        => false,
+                    'thumbnail'       => 'https://ps.w.org/wpzoom-forms/assets/icon-256x256.png',
+                    'external_url'    => 'https://wordpress.org/plugins/wpzoom-forms/',
+                    'category'        => 'Contact Form',
+                    'rating'          => 100,
+                    'active_installs' => 10000,
                 ),
 
                 array(
-                    'name'        => 'Elementor Addons by WPZOOM',
-                    'slug'        => 'wpzoom-elementor-addons',
-                    'description' => 'A collection of pre-designed templates and advanced widgets for the Elementor page builder.',
-                    'required'    => false,
-                    'thumbnail' => 'https://ps.w.org/wpzoom-elementor-addons/assets/icon-256x256.png',
+                    'name'            => 'Elementor Addons',
+                    'slug'            => 'wpzoom-elementor-addons',
+                    'description'     => 'A collection of pre-designed templates and advanced widgets for the Elementor page builder.',
+                    'required'        => false,
+                    'optional'        => true,
+                    'thumbnail'       => 'https://ps.w.org/wpzoom-elementor-addons/assets/icon-256x256.gif?rev=3370924',
+                    'external_url'    => 'https://wordpress.org/plugins/wpzoom-elementor-addons/',
+                    'category'        => 'Page Builder',
+                    'rating'          => 100,
+                    'active_installs' => 20000,
                 ),
 
                 array(
-                    'name'        => 'Video Popup Block by WPZOOM',
-                    'slug'        => 'wpzoom-video-popup-block',
-					'description' => 'Easily add a Gutenberg block to create customizable Play icon that open popups with YouTube, Vimeo, or MP4 videos.',
-                    'required'    => false,
-                    'thumbnail' => 'https://ps.w.org/wpzoom-video-popup-block/assets/icon-256x256.png',
+                    'name'            => 'Video Popup Block',
+                    'slug'            => 'wpzoom-video-popup-block',
+                    'description'     => 'Easily add a Gutenberg block to create customizable Play icon that open popups with YouTube, Vimeo, or MP4 videos.',
+                    'required'        => false,
+                    'optional'        => true,
+                    'thumbnail'       => 'https://ps.w.org/wpzoom-video-popup-block/assets/icon-256x256.png',
+                    'external_url'    => 'https://wordpress.org/plugins/wpzoom-video-popup-block/',
+                    'category'        => 'Video',
+                    'rating'          => 94,
+                    'active_installs' => 10000,
                 ),
 
-				// array(
-				// 	'name'        => 'Instagram Widget by WPZOOM',
-				// 	'slug'        => 'instagram-widget-by-wpzoom',
-				// 	'description' => 'Formerly known as "Instagram Widget by WPZOOM". Simple and lightweight widget for WordPress to display your Instagram feed.',
-				// 	'required'    => false,
-                //     'thumbnail' => 'https://ps.w.org/instagram-widget-by-wpzoom/assets/icon-256x256.png',
-				// ),
+                array(
+                    'name'            => 'Instagram Feeds',
+                    'slug'            => 'instagram-widget-by-wpzoom',
+                    'description'     => 'Formerly known as "Instagram Widget by WPZOOM". Simple and lightweight widget for WordPress to display your Instagram feed.',
+                    'required'        => false,
+                    'thumbnail'       => 'https://ps.w.org/instagram-widget-by-wpzoom/assets/icon-256x256.png',
+                    'external_url'    => 'https://wordpress.org/plugins/instagram-widget-by-wpzoom/',
+                    'category'        => 'Social Media',
+                    'rating'          => 86,
+                    'active_installs' => 60000,
+                ),
+
+                array(
+                    'name'            => 'Share Buttons & Social Icons',
+                    'slug'            => 'social-icons-widget-by-wpzoom',
+                    'description'     => 'Add social media icons and sharing buttons to your website! Social Icons & Sharing Buttons includes 400+ icons and customizable sharing buttons.',
+                    'required'        => false,
+                    'thumbnail'       => 'https://ps.w.org/social-icons-widget-by-wpzoom/assets/icon-256x256.png?rev=3272153',
+                    'external_url'    => 'https://wordpress.org/plugins/social-icons-widget-by-wpzoom/',
+                    'category'        => 'Social Media',
+                    'rating'          => 98,
+                    'active_installs' => 100000,
+                ),
+
+                array(
+                    'name'            => 'TranslatePress',
+                    'slug'            => 'translatepress-multilingual',
+                    'description'     => 'Experience a better way to translate your WordPress site and go multilingual, directly from the front-end using a visual translation interface.',
+                    'required'        => false,
+                    'optional'        => true,
+                    'thumbnail'       => 'https://ps.w.org/translatepress-multilingual/assets/icon-256x256.png',
+                    'external_url'    => 'https://wordpress.org/plugins/translatepress-multilingual/',
+                    'category'        => 'Translation',
+                    'rating'          => 96,
+                    'active_installs' => 400000,
+                ),
 
 			);
 
@@ -445,8 +496,8 @@ if ( ! class_exists( 'Inspiro_After_Setup_Theme' ) ) {
 				'id'           => 'inspiro_wporg',         // Unique ID for hashing notices for multiple instances of TGMPA.
 				'default_path' => '',                      // Default absolute path to bundled plugins.
 				'menu'         => 'inspiro-plugins', // Menu slug.
-                'parent_slug'  => 'inspiro',
-				'has_notices'  => true,                    // Show admin notices or not.
+				'parent_slug'  => 'inspiro',
+				'has_notices'  => false,                   // Disable default TGMPA notices - we use custom notice.
 				'dismissable'  => true,                    // If false, a user cannot dismiss the nag message.
 				'dismiss_msg'  => '',                      // If 'dismissable' is false, this message will be output at top of nag.
 				'is_automatic' => false,                   // Automatically activate plugins after installation or not.
